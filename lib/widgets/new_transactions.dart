@@ -8,12 +8,10 @@ class NewTransaction extends StatelessWidget {
   void submitData() {
     final enteredTitle = titleInput.text;
     final enteredAmount = double.parse(amountInput.text);
-
     //dummy validation
     if (enteredTitle.isEmpty || enteredAmount <= 0) {
       return;
     }
-
     addTx(
       titleInput.text,
       double.parse(amountInput.text),
