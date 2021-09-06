@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../models/transaction.dart';
 
 class TransactionList extends StatelessWidget {
@@ -13,6 +14,27 @@ class TransactionList extends StatelessWidget {
       child: ListView.builder(
         itemBuilder: (ctx, index) {
           return Card(
+            elevation: 5,
+            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 8),
+            child: ListTile(
+              leading: CircleAvatar(
+                child: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child:
+                      FittedBox(child: Text('\$${transactions[index].amount}')),
+                ),
+                radius: 30,
+              ),
+              title: Text(
+                transactions[index].title,
+                style: Theme.of(context).textTheme.headline6,
+              ),
+              subtitle: Text(
+                DateFormat.yMMMd().format(transactions[index].date),
+              ),
+            ),
+          );
+          /*Card(
             child: Row(
               children: [
                 Container(
@@ -47,7 +69,7 @@ class TransactionList extends StatelessWidget {
                 )
               ],
             ),
-          );
+          );*/
         },
         itemCount: transactions.length,
       ),
