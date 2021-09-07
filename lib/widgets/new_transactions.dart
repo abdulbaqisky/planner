@@ -75,7 +75,7 @@ class _NewTransactionState extends State<NewTransaction> {
                   Text(
                     _selectedDate == null
                         ? 'No date picked!'
-                        : DateFormat.yMd().format(_selectedDate!).toString(),
+                        : 'Picked date: ${DateFormat.yMd().format(_selectedDate!).toString()}',
                   ),
                   TextButton(
                     child: Text(

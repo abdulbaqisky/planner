@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:planner/widgets/chart.dart';
-import 'package:planner/widgets/transaction_List.dart';
-import './widgets/new_transactions.dart';
+import 'widgets/chart.dart';
+import 'widgets/transaction_List.dart';
+import 'widgets/new_transactions.dart';
 import 'models/transaction.dart';
 
 void main() {
@@ -45,7 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
     ),*/
   ];
 
-  List<Transaction> get _recentTransaction {
+  //redundant code
+  /*List<Transaction> get _recentTransaction {
     return _userTransactions
         .where(
           (tx) => tx.date.isAfter(
@@ -55,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         )
         .toList();
-  }
+  }*/
 
   void _addNewTransaction(
       String txTitle, double txAmount, DateTime chosenDate) {
